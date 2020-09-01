@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Checkers.css">
+    <script>
+        function newGame(){
+                if (window.confirm('Are you sure? (This game will lost!)')){
+                    location.reload()
+                }
+        }
+    </script>
+</head>
+<body>
+    <div id="all">
+        <div class="index1">
+            <h1>CHECKERS 2 PLAYERS</h1>
+            <h2>RULES</h2>
+            <h3>OBJECT</h3>
+            <p>Remove all your opponent's checkers from the game board by capturing them.</p>
+            <h3>HOW TO PLAY</h3>    
+            <P>White player to go first. On your turn, move any one of your checkers by the movement rules described below.
+                After you move one checker, your turn is over. The game continues with players alternating turns.
+            </P>
+            <h4>Movement Ruls</h4>
+            <ul>
+                <li>
+                    Always move your checker diagonally forward, toward your opponent's side of the gameboard <br>
+                    Note: After checker becomes a "King", it can diagonally forward of backward across the gameboard.
+                </li>
+                <li>
+                    Move your checker one space diagonally, to an open adjacent square, or jump one or more checkers diagonally to an open square adjacent to the checker you jumped.
+                    When you jump over an opponent's checker, you capture it (see Capturing an Opponent's Checker).
+                </li>
+                <li>
+                    If all squares adjacent to your checker are occupied, your checker is blocked and cannot move
+                </li>
+            </ul>
+            <h4>Capturing an Opponent's Checker</h4>
+            <p>If your jump an opponent's checker, you capture it. The checker will be removed from the gameboard.<br>
+                If you have an opportunity to capture you <span>must</span> do it.<br>
+                You can jump over two or more checkers if you have the option, After the first jump you can jump backward.
+            </p>
+            <h4>Becoming a "King"</h4>
+            <p>As soon as one of your checkers reaches the first row on opponent's side of the gameboard, its becomes a King.
+                The checker will become golden and will be wearing a crown.
+            </p>
+            <h3>HOW TO WIN</h3>
+            <P>The first player to capture all opposing checkers from the gameboard wins the game!
+            </P>
+        </div>
+        <div id="board"></div>
+        <div class="index1 index2">
+            <div class="turn-board">
+                <h1>TURN BOARD</h1>
+                <h3 id="white-player">White Player</h3>
+            </div>
+            <div class="score-board">
+                <h1>SCORE BOARD</h1>
+                <div class="score-board1" id="white-score">
+                    <h2 id="white-player">White Player</h2>
+                </div>
+                <div class="score-board1" id="black-score">
+                    <h2 id="black-player">Black Player</h2>
+                </div>
+            </div>
+            <button class="new-game-button" onclick="newGame()">NEW GAME</button>
+        </div>
+        <p id="copyright">© Made By Assaf Harush for Talpiyot-Hitech</p>
+        <div id="modal" class="none">
+            <div class="modal__box score-board" id="modal-box">
+            <h1>GAME OVER</h1>
+            <h2 id="message"></h2>
+            <button class="new-game-button modal-button" onclick="location.reload()">NEW GAME</button>
+        </div>
+    </div>
+    <script src="./Checkers.js"></script>
+</body>
+</html>
